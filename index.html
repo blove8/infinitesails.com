@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Sails — Stop rowing. Start sailing.</title>
+  <meta name="description" content="Helping humans harness AI to reduce toil and focus on the work you care about.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0f1e2e;
+      --deep:   #162539;
+      --sky:    #c8dff0;
+      --sail:   #e8f4fd;
+      --accent: #4a90c4;
+      --muted:  #7ba8c9;
+      --text:   #ddeaf5;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--navy);
+      color: var(--text);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── Subtle horizon gradient ── */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 100%, rgba(74,144,196,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 30% at 50% 110%, rgba(74,144,196,.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .wordmark {
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--sail);
+      max-width: 34rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .subhero {
+      font-size: clamp(.95rem, 2vw, 1.1rem);
+      line-height: 1.65;
+      color: var(--sky);
+      max-width: 32rem;
+      opacity: .85;
+      margin-bottom: 3rem;
+    }
+
+    .tagline {
+      font-size: .8rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3rem;
+    }
+
+    .contact {
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color .15s;
+    }
+
+    .contact a:hover { border-color: var(--accent); }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: .75rem;
+      color: rgba(123,168,201,.4);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="wordmark">Infinite Sails</p>
+
+    <h1>Helping humans harness AI to reduce toil and focus on the work you care about.</h1>
+
+    <p class="subhero">
+      Strategy, implementation, and knowledge transfer — bringing AI and agentic workflows into your work so you spend more time on what only you can do.
+    </p>
+
+    <p class="tagline">Stop rowing. Start sailing.</p>
+
+    <p class="contact">Site coming soon &nbsp;·&nbsp; <a href="mailto:info@infinitesails.com">info@infinitesails.com</a></p>
+  </main>
+
+  <footer>&copy; 2026 Infinite Sails LLC</footer>
+</body>
+</html>
