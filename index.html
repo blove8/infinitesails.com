@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infinite Sails — Stop rowing. Start sailing.</title>
-  <meta name="description" content="Helping humans harness AI to reduce toil and focus on the work you care about.">
+  <title>Infinite Sails: Responsible AI for teams that need real work done</title>
+  <meta name="description" content="Infinite Sails helps teams reduce repetitive work, improve knowledge access, and build human-centered AI systems they can actually trust.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:   #0f1e2e;
-      --deep:   #162539;
-      --sky:    #c8dff0;
-      --sail:   #e8f4fd;
-      --accent: #4a90c4;
-      --muted:  #7ba8c9;
-      --text:   #ddeaf5;
+      --navy:       #0f1e2e;
+      --deep:       #162539;
+      --sky:        #c8dff0;
+      --sail:       #e8f4fd;
+      --accent:     #4a90c4;
+      --accent-rgb: 74, 144, 196;
+      --muted:      #7ba8c9;
+      --text:       #ddeaf5;
     }
 
     html, body {
@@ -31,14 +32,13 @@
       min-height: 100vh;
     }
 
-    /* ── Subtle horizon gradient ── */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 50% at 50% 100%, rgba(74,144,196,.18) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 30% at 50% 110%, rgba(74,144,196,.08) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 50% at 50% 100%, rgba(var(--accent-rgb),.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 30% at 50% 110%, rgba(var(--accent-rgb),.08) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
@@ -51,43 +51,74 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 3rem 2rem;
+      padding: 5rem 2rem;
       text-align: center;
     }
 
-.wordmark {
+    .wordmark {
       font-size: .85rem;
       font-weight: 600;
       letter-spacing: .18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 3.5rem;
+      margin-bottom: 2rem;
     }
 
     h1 {
-      font-size: clamp(1.6rem, 4vw, 2.6rem);
-      font-weight: 600;
-      line-height: 1.25;
+      font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+      font-weight: 700;
+      line-height: 1.2;
       color: var(--sail);
-      max-width: 34rem;
-      margin-bottom: 1.25rem;
+      max-width: 36rem;
+      margin-bottom: 1.5rem;
     }
 
     .subhero {
       font-size: clamp(.95rem, 2vw, 1.1rem);
-      line-height: 1.65;
+      line-height: 1.7;
       color: var(--sky);
-      max-width: 32rem;
-      opacity: .85;
-      margin-bottom: 3rem;
+      max-width: 34rem;
+      opacity: .88;
+      margin-bottom: 2.5rem;
     }
 
     .tagline {
-      font-size: .8rem;
-      letter-spacing: .14em;
+      font-size: .78rem;
+      letter-spacing: .16em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 3rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .cta-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: .85rem 1.9rem;
+      border-radius: 6px;
+      font-size: .95rem;
+      font-weight: 600;
+      letter-spacing: .01em;
+      margin-bottom: 1.25rem;
+      width: fit-content;
+      transition: filter .15s ease;
+    }
+
+    .cta-primary:hover { filter: brightness(1.12); }
+
+    .cta-primary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .responsible {
+      font-size: .8rem;
+      letter-spacing: .06em;
+      color: var(--muted);
+      opacity: .75;
+      margin-bottom: 1rem;
+      font-style: italic;
     }
 
     .contact {
@@ -104,13 +135,9 @@
 
     .contact a:hover { border-color: var(--accent); }
 
-    .responsible {
-      font-size: .8rem;
-      letter-spacing: .06em;
-      color: var(--muted);
-      opacity: .75;
-      margin-bottom: 2rem;
-      font-style: italic;
+    .contact a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
     }
 
     footer {
@@ -119,7 +146,11 @@
       text-align: center;
       padding: 1.5rem;
       font-size: .75rem;
-      color: rgba(123,168,201,.4);
+      color: rgba(123, 168, 201, .4);
+    }
+
+    @media (max-width: 480px) {
+      main { padding: 4rem 1.25rem; }
     }
   </style>
 </head>
@@ -127,17 +158,19 @@
   <main>
     <p class="wordmark">Infinite Sails</p>
 
-    <h1>Helping humans harness AI to reduce toil and focus on the work you care about.</h1>
+    <h1>Responsible AI adoption for the work only you can do.</h1>
 
     <p class="subhero">
-      Strategy, implementation, and knowledge transfer. Bringing AI and agentic workflows into your work so you spend more time on what only you can do.
+      From strategy to execution. AI and agentic workflows designed around your work, your team, and your values.
     </p>
 
     <p class="tagline">Stop rowing. Start sailing.</p>
 
+    <a href="https://cal.com/infinitesails/30min" class="cta-primary" target="_blank" rel="noopener">Let's connect</a>
+
     <p class="responsible">Committed to AI that's responsible, sustainable, and human-centered.</p>
 
-    <p class="contact">Site coming soon &nbsp;·&nbsp; <a href="mailto:info@infinitesails.com">info@infinitesails.com</a></p>
+    <p class="contact"><a href="mailto:info@infinitesails.com">info@infinitesails.com</a></p>
   </main>
 
   <footer>&copy; 2026 Infinite Sails LLC</footer>
